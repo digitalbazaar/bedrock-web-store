@@ -3,13 +3,13 @@
  */
 'use strict';
 
-import uuidv4 from 'uuid/v4';
+import UUID from 'pure-uuid';
 
 const store = {};
 
 export class MemoryEngine {
   constructor() {
-    this._id = uuidv4();
+    this._id = new UUID(4).format();
     store[this._id] = {};
   }
 

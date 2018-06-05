@@ -4,7 +4,7 @@
   "description": "Shared storage for Bedrock Web Apps",
   "main": "index.js",
   "dependencies": {
-    "uuid": "^3.2.1"
+    "pure-uuid": "^1.5.2"
   },
   "repository": {
     "type": "git",

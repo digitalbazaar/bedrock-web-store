@@ -1,5 +1,17 @@
 # bedrock-web-store
-Shared storage for Bedrock Web Apps
+
+A module for creating shared storage for Bedrock Web Apps. The design requires
+stored records to have only one instance in memory. The records may be backed
+by a persistent storage layer such as `localStorage` or `IndexedDB`. Whether
+or not persistent storage is used is determined by the underlying engine
+associated with a particular `Store` instance.
+
+It is important to note that even if a persistent storage mechanism is used,
+any records retrieved from storage via the `Store` API will have only *one*
+in-memory copy, ensuring that frontend components will share the same
+instance. That is to say that a naive implementation of a `Store` engine
+that simply maps the API onto, for example, `localForage` or `localStorage`
+would break this guarantee. There must also be a shared memory layer.
 
 # Usage
 

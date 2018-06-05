@@ -9,37 +9,42 @@ export default class Store {
   }
 
   setEngine({engine}) {
-    if(typeof engine !== 'object') {
-      throw new TypeError('"engine" must be an object.');
-    }
+    assertObject(engine, 'engine');
     this._engine = engine;
   }
 
-  delete({id}) {
+  delete({key}) {
     assertEngine(this);
-    assertString(id, 'id');
+    assertString(key, 'key');
     // note: an engine can return a Promise here
-    return this._engine.delete({id});
+    return this._engine.delete({key});
   }
 
-  get({id}) {
+  get({key}) {
     assertEngine(this);
-    assertString(id, 'id');
+    assertString(key, 'key');
     // note: an engine can return a Promise here
-    return this._engine.get({id});
+    return this._engine.get({key});
   }
 
-  set({id, record}) {
+  set({id, object}) {
     assertEngine(this);
     assertString(id, 'id');
+    assertObject(object, 'object');
     // note: an engine can return a Promise here
-    return this._engine.set({id, record});
+    return this._engine.set({id, object});
   }
 }
 
 function assertEngine(store) {
   if(!store._engine) {
     throw new Error('No storage engine set.');
+  }
+}
+
+function assertObject(x, name) {
+  if(typeof engine !== 'object') {
+    throw new TypeError(`"${name}" must be a object.`);
   }
 }
 

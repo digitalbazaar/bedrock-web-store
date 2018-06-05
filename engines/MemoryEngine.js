@@ -20,7 +20,7 @@ export default class MemoryEngine {
     return this._store[id];
   }
 
-  set({id, record}) {
-    this._store[id] = record;
+  set({id, object}) {
+    this._store[id] = object;
   }
 }

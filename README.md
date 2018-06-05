@@ -1,13 +1,13 @@
 # bedrock-web-store
 
 A module for creating shared storage for Bedrock Web Apps. The design requires
-stored records to have only one instance in memory. The records may be backed
+stored objects to have only one instance in memory. The objects may be backed
 by a persistent storage layer such as `localStorage` or `IndexedDB`. Whether
 or not persistent storage is used is determined by the underlying engine
 associated with a particular `Store` instance.
 
 It is important to note that even if a persistent storage mechanism is used,
-any records retrieved from storage via the `Store` API will have only *one*
+any objects retrieved from storage via the `Store` API will have only *one*
 in-memory copy, ensuring that frontend components will share the same
 instance. That is to say that a naive implementation of a `Store` engine
 that simply maps the API onto, for example, `localForage` or `localStorage`
@@ -41,7 +41,7 @@ import {store} from 'bedrock-web-store';
 
 const foo = {a: 1, b: 2};
 
-store.set({id: '123', record: foo});
+store.set({id: '123', object: foo});
 ```
 
 In file 2:
@@ -82,7 +82,7 @@ In file 1:
 import {stores} from './myStores.js';
 
 const foo = {a: 1, b: 2};
-stores.foos.set({id: '123', record: foo});
+stores.foos.set({id: '123', object: foo});
 
 // ...
 ```

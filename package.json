@@ -1,0 +1,16 @@
+{
+  "name": "bedrock-web-store",
+  "version": "0.1.0",
+  "description": "Shared storage for Bedrock Web Apps",
+  "main": "index.js",
+  "dependencies": {
+    "uuid": "^3.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/digitalbazaar/bedrock-web-store"
+  },
+  "bedrock": {
+    "browserDependencies": "all"
+  }
+}

@@ -5,24 +5,28 @@
 
 import UUID from 'pure-uuid';
 
-const store = {};
-
-export class MemoryEngine {
+export default class MemoryEngine {
   constructor() {
     this._id = new UUID(4).format();
-    store[this._id] = {};
+    this._store = {};
+    this._store[this._id] = {};
   }
 
   delete() {
-    delete store[this._id];
+    delete this._store[this._id];
     return true;
   }
 
   get() {
-    return store[this._id];
+    return this._store[this._id];
   }
 
   id() {
     return this._id;
+  }
+
+  set(obj) {
+    this._store[this._id] = obj
+    return this._store[this._id];
   }
 }

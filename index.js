@@ -3,4 +3,6 @@
  */
 'use strict';
 
-export {Store} from './Store.js';
+import Store from './Store.js';
+
+export default Store;

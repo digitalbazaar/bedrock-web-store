@@ -5,8 +5,8 @@
 
 import MemoryEngine from './engines/MemoryEngine';
 
-export class Store {
-  constructor({type = 'memory'}) {
+export default class Store {
+  constructor({type = 'memory'} = {}) {
     if(type === 'memory') {
       this._engine = new MemoryEngine();
     }
@@ -22,5 +22,9 @@ export class Store {
 
   id() {
     return this.engine.id();
+  }
+
+  set(obj) {
+    return this._engine.set(obj);
   }
 }

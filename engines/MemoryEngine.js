@@ -3,30 +3,24 @@
  */
 'use strict';
 
-import UUID from 'pure-uuid';
-
 export default class MemoryEngine {
   constructor() {
-    this._id = new UUID(4).format();
     this._store = {};
-    this._store[this._id] = {};
   }
 
-  delete() {
-    delete this._store[this._id];
-    return true;
+  delete({id}) {
+    if(id in this._store) {
+      delete this._store[id];
+      return true;
+    }
+    return false;
   }
 
-  get() {
-    return this._store[this._id];
+  get({id}) {
+    return this._store[id];
   }
 
-  id() {
-    return this._id;
-  }
-
-  set(obj) {
-    this._store[this._id] = obj
-    return this._store[this._id];
+  set({id, record}) {
+    this._store[id] = record;
   }
 }

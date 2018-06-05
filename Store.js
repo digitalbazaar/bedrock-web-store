@@ -3,28 +3,48 @@
  */
 'use strict';
 
-import MemoryEngine from './engines/MemoryEngine';
-
 export default class Store {
-  constructor({type = 'memory'} = {}) {
-    if(type === 'memory') {
-      this._engine = new MemoryEngine();
+  constructor({engine = null} = {}) {
+    this._engine = engine;
+  }
+
+  setEngine({engine}) {
+    if(typeof engine !== 'object') {
+      throw new TypeError('"engine" must be an object.');
     }
+    this._engine = engine;
   }
 
-  delete() {
-    return this._engine.delete();
+  delete({id}) {
+    assertEngine(this);
+    assertString(id, 'id');
+    // note: an engine can return a Promise here
+    return this._engine.delete({id});
   }
 
-  get() {
-    return this._engine.get();
+  get({id}) {
+    assertEngine(this);
+    assertString(id, 'id');
+    // note: an engine can return a Promise here
+    return this._engine.get({id});
   }
 
-  id() {
-    return this.engine.id();
+  set({id, record}) {
+    assertEngine(this);
+    assertString(id, 'id');
+    // note: an engine can return a Promise here
+    return this._engine.set({id, record});
   }
+}
 
-  set(obj) {
-    return this._engine.set(obj);
+function assertEngine(store) {
+  if(!store._engine) {
+    throw new Error('No storage engine set.');
+  }
+}
+
+function assertString(x, name) {
+  if(typeof x !== 'string') {
+    throw new TypeError(`"${name}" must be a string.`);
   }
 }

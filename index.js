@@ -7,5 +7,5 @@ import Store from './Store.js';
 
 export const store = new Store();
 export default store;
-export {MemoryEngine} from './engines/MemoryEngine.js';
+export {default as MemoryEngine} from './engines/MemoryEngine.js';
 export {Store};

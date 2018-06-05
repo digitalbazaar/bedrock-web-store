@@ -21,18 +21,18 @@ export default class Store {
     return this._engine.create({id, object});
   }
 
-  delete({key}) {
+  delete({id}) {
     assertEngine(this);
-    assertString(key, 'key');
+    assertString(id, 'id');
     // note: an engine can return a Promise here
-    return this._engine.delete({key});
+    return this._engine.delete({id});
   }
 
-  get({key}) {
+  get({id}) {
     assertEngine(this);
-    assertString(key, 'key');
+    assertString(id, 'id');
     // note: an engine can return a Promise here
-    return this._engine.get({key});
+    return this._engine.get({id});
   }
 }
 

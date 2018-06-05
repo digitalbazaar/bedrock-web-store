@@ -28,8 +28,7 @@ parameter.
 In setup file:
 
 ```js
-import {store} from 'bedrock-web-store';
-import {MemoryEngine} from 'bedrock-web-store';
+import {store, MemoryEngine} from 'bedrock-web-store';
 
 store.setEngine({engine: new MemoryEngine()});
 ```
@@ -67,8 +66,7 @@ the Web App.
 In custom `myStores.js`:
 
 ```js
-import {Store} from 'bedrock-web-store';
-import {MemoryEngine} from 'bedrock-web-store';
+import {Store, MemoryEngine} from 'bedrock-web-store';
 
 export const stores = {};
 

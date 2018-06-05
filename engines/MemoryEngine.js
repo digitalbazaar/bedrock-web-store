@@ -8,6 +8,13 @@ export default class MemoryEngine {
     this._store = {};
   }
 
+  create({id, object}) {
+    if(id in this._store) {
+      throw new Error(`"id" (${id}) is already in use.`);
+    }
+    this._store[id] = object;
+  }
+
   delete({id}) {
     if(id in this._store) {
       delete this._store[id];
@@ -18,9 +25,5 @@ export default class MemoryEngine {
 
   get({id}) {
     return this._store[id];
-  }
-
-  set({id, object}) {
-    this._store[id] = object;
   }
 }

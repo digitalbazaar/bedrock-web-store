@@ -13,6 +13,14 @@ export default class Store {
     this._engine = engine;
   }
 
+  create({id, object}) {
+    assertEngine(this);
+    assertString(id, 'id');
+    assertObject(object, 'object');
+    // note: an engine can return a Promise here
+    return this._engine.create({id, object});
+  }
+
   delete({key}) {
     assertEngine(this);
     assertString(key, 'key');
@@ -26,14 +34,6 @@ export default class Store {
     // note: an engine can return a Promise here
     return this._engine.get({key});
   }
-
-  set({id, object}) {
-    assertEngine(this);
-    assertString(id, 'id');
-    assertObject(object, 'object');
-    // note: an engine can return a Promise here
-    return this._engine.set({id, object});
-  }
 }
 
 function assertEngine(store) {
@@ -43,7 +43,7 @@ function assertEngine(store) {
 }
 
 function assertObject(x, name) {
-  if(typeof engine !== 'object') {
+  if(typeof x !== 'object') {
     throw new TypeError(`"${name}" must be a object.`);
   }
 }

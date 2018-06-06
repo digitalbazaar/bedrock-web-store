@@ -3,6 +3,8 @@
  */
 'use strict';
 
+import DuplicateError from '../DuplicateError.js';
+
 export default class MemoryEngine {
   constructor() {
     this._store = {};
@@ -10,7 +12,7 @@ export default class MemoryEngine {
 
   create({id, object}) {
     if(id in this._store) {
-      throw new Error(`"id" (${id}) is already in use.`);
+      throw new DuplicateError(`"id" (${id}) is already in use.`);
     }
     this._store[id] = object;
   }

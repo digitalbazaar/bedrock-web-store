@@ -1,5 +1,10 @@
 # bedrock-web-store ChangeLog
 
+## 1.0.0 - 2018-06-06
+
+### Changed
+- First major release.
+
 ## 0.1.0 - 2018-06-06
 
 ### Added

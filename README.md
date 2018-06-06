@@ -41,7 +41,7 @@ import {store} from 'bedrock-web-store';
 
 const foo = {a: 1, b: 2};
 
-store.set({id: '123', object: foo});
+store.create({id: '123', object: foo});
 ```
 
 In file 2:
@@ -82,7 +82,7 @@ In file 1:
 import {stores} from './myStores.js';
 
 const foo = {a: 1, b: 2};
-stores.foos.set({id: '123', object: foo});
+stores.foos.create({id: '123', object: foo});
 
 // ...
 ```

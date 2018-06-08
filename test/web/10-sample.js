@@ -20,7 +20,7 @@ describe('Default Store', () => {
     store.setEngine({engine: new MemoryEngine()});
 
     expect(() => store.create({id: '123', object: 'foo'}))
-      .to.throw(/must be a object/);
+      .to.throw(/must be an object/);
 
     done();
   });

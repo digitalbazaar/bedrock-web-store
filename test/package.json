@@ -2,6 +2,7 @@
   "name": "bedrock-web-store-test",
   "version": "0.0.1-0",
   "description": "Bedrock web store test",
+  "private": true,
   "scripts": {
     "test": "node --preserve-symlinks test.js test --framework karma"
   },

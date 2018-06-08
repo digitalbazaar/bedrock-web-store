@@ -5,4 +5,4 @@
 const config = require('bedrock').config;
 const path = require('path');
 
-config.karma.suites['web'] = path.join('web', '**', '*.js');
+config.karma.suites['bedrock-web-store'] = path.join('web', '**', '*.js');

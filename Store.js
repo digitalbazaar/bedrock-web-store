@@ -44,7 +44,7 @@ function assertEngine(store) {
 
 function assertObject(x, name) {
   if(typeof x !== 'object') {
-    throw new TypeError(`"${name}" must be a object.`);
+    throw new TypeError(`"${name}" must be an object.`);
   }
 }
 

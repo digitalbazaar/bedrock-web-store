@@ -1,0 +1,31 @@
+{
+  "name": "bedrock-web-store-test",
+  "version": "0.0.1-0",
+  "description": "Bedrock web store test",
+  "private": true,
+  "scripts": {
+    "test": "node --preserve-symlinks test.js test --framework karma"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/digitalbazaar/bedrock-web-store"
+  },
+  "keywords": [
+    "bedrock"
+  ],
+  "author": {
+    "name": "Digital Bazaar, Inc.",
+    "email": "support@digitalbazaar.com",
+    "url": "https://digitalbazaar.com"
+  },
+  "bugs": {
+    "url": "https://github.com/digitalbazaar/bedrock-web-store/issues"
+  },
+  "homepage": "https://github.com/digitalbazaar/bedrock-web-store",
+  "dependencies": {
+    "bedrock": "^1.0.0",
+    "bedrock-karma": "digitalbazaar/bedrock-karma#implementation",
+    "bedrock-test": "digitalbazaar/bedrock-test#karma",
+    "bedrock-web-store": "file:.."
+  }
+}

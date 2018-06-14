@@ -24,8 +24,8 @@
   "homepage": "https://github.com/digitalbazaar/bedrock-web-store",
   "dependencies": {
     "bedrock": "^1.0.0",
-    "bedrock-karma": "digitalbazaar/bedrock-karma#implementation",
-    "bedrock-test": "digitalbazaar/bedrock-test#karma",
+    "bedrock-karma": "^1.0.0",
+    "bedrock-test": "^2.0.0",
     "bedrock-web-store": "file:.."
   }
 }

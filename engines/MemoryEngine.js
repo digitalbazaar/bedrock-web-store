@@ -14,7 +14,7 @@ export default class MemoryEngine {
     if(id in this._store) {
       throw new DuplicateError(`"id" (${id}) is already in use.`);
     }
-    this._store[id] = object;
+    return this._store[id] = object;
   }
 
   delete({id}) {

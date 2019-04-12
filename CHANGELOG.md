@@ -1,5 +1,11 @@
 # bedrock-web-store ChangeLog
 
+## 1.2.0 - 2019-xx-xx
+
+### Added
+- Add utility `createProxy` method for creating observable objects
+  to store.
+
 ## 1.1.1 - 2018-06-14
 
 ### Fixed

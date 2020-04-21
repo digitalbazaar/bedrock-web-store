@@ -1,4 +1,4 @@
-import store, {MemoryEngine, Store} from 'bedrock-web-store';
+import store, {MemoryEngine} from 'bedrock-web-store';
 
 describe('Default Store', () => {
   it('Store should throw error if storage engine is not set', done => {

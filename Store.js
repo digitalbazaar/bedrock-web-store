@@ -1,19 +1,17 @@
 /*!
- * Copyright (c) 2018 Digital Bazaar, Inc. All rights reserved.
+ * Copyright (c) 2018-2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
-
-export default class Store {
+export class Store {
   constructor({engine = null} = {}) {
     this._engine = engine;
   }
 
-  setEngine({engine}) {
+  setEngine({engine} = {}) {
     assertObject(engine, 'engine');
     this._engine = engine;
   }
 
-  create({id, object}) {
+  create({id, object} = {}) {
     assertEngine(this);
     assertString(id, 'id');
     assertObject(object, 'object');
@@ -21,14 +19,14 @@ export default class Store {
     return this._engine.create({id, object});
   }
 
-  delete({id}) {
+  delete({id} = {}) {
     assertEngine(this);
     assertString(id, 'id');
     // note: an engine can return a Promise here
     return this._engine.delete({id});
   }
 
-  get({id}) {
+  get({id} = {}) {
     assertEngine(this);
     assertString(id, 'id');
     // note: an engine can return a Promise here

@@ -1,9 +1,7 @@
 /*!
- * Copyright (c) 2019 Digital Bazaar, Inc. All rights reserved.
+ * Copyright (c) 2019-2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
-
-export default function createProxy(x, {
+export function createProxy(x, {
   addProperty = defaultPropertySetter,
   setProperty = defaultPropertySetter
 } = {}) {

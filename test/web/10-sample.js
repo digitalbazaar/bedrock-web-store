@@ -1,3 +1,6 @@
+/*!
+ * Copyright (c) 2018-2022 Digital Bazaar, Inc. All rights reserved.
+ */
 import store, {MemoryEngine} from 'bedrock-web-store';
 
 describe('Default Store', () => {

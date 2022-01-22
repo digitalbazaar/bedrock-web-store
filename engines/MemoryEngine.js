@@ -1,31 +1,25 @@
 /*!
- * Copyright (c) 2018 Digital Bazaar, Inc. All rights reserved.
+ * Copyright (c) 2018-2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
+import {DuplicateError} from '../DuplicateError.js';
 
-import DuplicateError from '../DuplicateError.js';
-
-export default class MemoryEngine {
+export class MemoryEngine {
   constructor() {
-    this._store = {};
+    this._store = new Map();
   }
 
-  create({id, object}) {
-    if(id in this._store) {
+  create({id, object} = {}) {
+    if(this._store.has(id)) {
       throw new DuplicateError(`"id" (${id}) is already in use.`);
     }
-    return this._store[id] = object;
+    return this._store.set(id, object);
   }
 
-  delete({id}) {
-    if(id in this._store) {
-      delete this._store[id];
-      return true;
-    }
-    return false;
+  delete({id} = {}) {
+    return this._store.delete(id);
   }
 
-  get({id}) {
-    return this._store[id];
+  get({id} = {}) {
+    return this._store.get(id);
   }
 }

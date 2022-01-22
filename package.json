@@ -1,6 +1,6 @@
 {
   "name": "bedrock-web-store",
-  "version": "1.2.2",
+  "version": "1.2.3-0",
   "description": "Shared storage for Bedrock Web Apps",
   "module": "main.js",
   "scripts": {

@@ -6,13 +6,13 @@
   "scripts": {
     "lint": "eslint ."
   },
-  "dependencies": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/digitalbazaar/bedrock-web-store"
   },
   "devDependencies": {
-    "eslint": "^6.8.0",
-    "eslint-config-digitalbazaar": "^2.3.0"
+    "eslint": "^7.32.0",
+    "eslint-config-digitalbazaar": "^2.3.0",
+    "eslint-plugin-jsdoc": "^37.6.3"
   }
 }

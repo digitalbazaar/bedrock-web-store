@@ -1,6 +1,6 @@
 # bedrock-web-store ChangeLog
 
-## 1.2.2 - 2022-01-xx
+## 1.2.2 - 2022-01-21
 
 ### Fixed
 - Fix eslint config and dev dependencies.

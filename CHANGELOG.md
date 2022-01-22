@@ -1,6 +1,6 @@
 # bedrock-web-store ChangeLog
 
-## 1.2.1 - 2022-01-xx
+## 1.2.1 - 2022-01-21
 
 ### Changed
 - Replace `MemoryEngine` implementation with `Map` to improve performance.

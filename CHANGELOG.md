@@ -1,5 +1,10 @@
 # bedrock-web-store ChangeLog
 
+## 1.2.3 - 2022-02-TBD
+
+### Fixed
+- Undo ES6 module setup.
+
 ## 1.2.2 - 2022-01-21
 
 ### Fixed

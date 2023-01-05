@@ -1,8 +1,12 @@
 {
-  "name": "bedrock-web-store",
+  "name": "@bedrock/web-store",
   "version": "1.2.3-0",
   "description": "Shared storage for Bedrock Web Apps",
-  "module": "main.js",
+  "type": "module",
+  "exports": "./lib/index.js",
+  "files": [
+    "lib/*"
+  ],
   "scripts": {
     "lint": "eslint ."
   },
@@ -11,8 +15,9 @@
     "url": "https://github.com/digitalbazaar/bedrock-web-store"
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-config-digitalbazaar": "^2.3.0",
-    "eslint-plugin-jsdoc": "^37.6.3"
+    "eslint": "^8.31.0",
+    "eslint-config-digitalbazaar": "^4.2.0",
+    "eslint-plugin-jsdoc": "^39.6.4",
+    "eslint-plugin-unicorn": "^45.0.2"
   }
 }

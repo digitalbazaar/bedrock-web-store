@@ -1,4 +1,12 @@
-# bedrock-web-store ChangeLog
+# @bedrock/web-store ChangeLog
+
+## 2.0.0 - 2023-TBD
+
+### Changed
+- **BREAKING**: Rename package to @bedrock/web-store.
+- **BREAKING**: Use `exports` instead of `module`.
+- Update dependencies.
+- Lint module.
 
 ## 1.2.2 - 2022-01-21
 

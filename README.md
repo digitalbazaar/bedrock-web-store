@@ -16,7 +16,7 @@ would break this guarantee. There must also be a shared memory layer.
 # Usage
 
 ```
-npm install bedrock-web-store
+npm install @bedrock/web-store
 ```
 
 ## Simple default singleton storage
@@ -28,7 +28,7 @@ parameter.
 In setup file:
 
 ```js
-import {store, MemoryEngine} from 'bedrock-web-store';
+import {store, MemoryEngine} from '@bedrock/web-store';
 
 store.setEngine({engine: new MemoryEngine()});
 ```
@@ -36,7 +36,7 @@ store.setEngine({engine: new MemoryEngine()});
 In file 1:
 
 ```js
-import {store} from 'bedrock-web-store';
+import {store} from '@bedrock/web-store';
 
 const foo = {a: 1, b: 2};
 
@@ -46,7 +46,7 @@ store.create({id: '123', object: foo});
 In file 2:
 
 ```js
-import {store} from 'bedrock-web-store';
+import {store} from '@bedrock/web-store';
 
 const foo = store.get({id: '123'});
 
@@ -66,7 +66,7 @@ the Web App.
 In custom `myStores.js`:
 
 ```js
-import {Store, MemoryEngine} from 'bedrock-web-store';
+import {Store, MemoryEngine} from '@bedrock/web-store';
 
 export const stores = {};
 

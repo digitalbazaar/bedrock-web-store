@@ -2,8 +2,8 @@
  * Copyright (c) 2018 Digital Bazaar, Inc. All rights reserved.
  */
 
-const bedrock = require('bedrock');
-require('bedrock-karma');
+import * as bedrock from '@bedrock/core';
+import '@bedrock/karma';
 
-require('bedrock-test');
+import '@bedrock/test';
 bedrock.start();
